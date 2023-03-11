@@ -1,0 +1,39 @@
+<mat-card [formGroup]="prxtimeForm">
+  <mat-card-header>
+    <mat-card-title>Calculate worked time</mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="flex flex-col space-y-4">
+      <mat-form-field appearance="fill">
+        <mat-label>In AM</mat-label>
+        <input matInput type="text" formControlName="inAM" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Out AM</mat-label>
+        <input matInput type="text" formControlName="outAM" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>In PM</mat-label>
+        <input matInput type="text" formControlName="inPM" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Out PM</mat-label>
+        <input matInput type="text" formControlName="outPM" required>
+      </mat-form-field>
+      <mat-slide-toggle name="addToMssal" (change)="onAddToMssalChange($event)">Add to MSSAL</mat-slide-toggle>
+      <div class="flex shadow-md" *ngIf="workedTime !== undefined">
+        <div class="flex w-1/4 rounded-l-sm items-center p-2 px-4 bg-indigo-300">
+          <span class="font-bold">Worked time</span>
+        </div>
+        <div class="flex w-3/4 rounded-r-sm items-center p-2 px-4 bg-indigo-200">
+          {{workedTime | timeTransformPipe}}
+        </div>
+      </div>
+      <app-display-break-length [lunchTime]="lunchTime" [showCalculation]="showCalculation"></app-display-break-length>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="calculateTime()">Calculate time</button>
+  </mat-card-actions>
+</mat-card>

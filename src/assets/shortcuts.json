@@ -1,0 +1,47 @@
+[
+  {
+    "section": "Project management",
+    "shortcuts": [
+      {
+        "name": "Jira backlog",
+        "url": "https://jira/secure/RapidBoard.jspa?projectKey=CBSS&view=planning",
+        "icon": "calendar_month"
+      },
+      {
+        "name": "Bitbucket",
+        "url": "https://bitbucket/dashboard",
+        "icon": "calendar_month"
+      },
+      {
+        "name": "Bambooprod",
+        "url": "https://bambooprod",
+        "icon": "send_time_extension"
+      },
+      {
+        "name": "Sonarqubeprod",
+        "url": "https://sonarqubeprod",
+        "icon": "construction"
+      }
+    ]
+  },
+  {
+    "section": "Other links",
+    "shortcuts": [
+      {
+        "name": "Outlook",
+        "url": "https://outlook.live.com/",
+        "icon": "mail"
+      },
+      {
+        "name": "Google",
+        "url": "https://www.google.com/",
+        "icon": "travel_explore"
+      },
+      {
+        "name": "Spotify",
+        "url": "https://www.spotify.com/",
+        "icon": "headphones"
+      }
+    ]
+  }
+]

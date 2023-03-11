@@ -1,0 +1,14 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{section}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let sh of shortcuts">
+        <mat-icon matListItemIcon><a [href]="sh.url" target="_blank">{{sh.icon}}</a></mat-icon>
+        <div matListItemTitle><a [href]="sh.url" target="_blank">{{sh.name}}</a></div>
+        <div matListItemLine>{{sh.url}}</div>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

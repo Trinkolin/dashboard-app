@@ -1,0 +1,21 @@
+<mat-card [formGroup]="bitbucket">
+  <mat-card-header>
+    <mat-card-title>Enter a Jira ticket ID</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="flex flex-col space-y-4">
+      <mat-form-field appearance="fill">
+        <mat-label>Jira ticket ID</mat-label>
+        <input matInput placeholder="XXXX-YYYY" pattern="^([A-Z][A-Z0-9]+-\d+)$" type="text" formControlName="ticket" />
+      </mat-form-field>
+      <mat-slide-toggle name="isToAddToTickets" (change)="onIsToAddToTickets($event)">Add to list of
+        tickets</mat-slide-toggle>
+      <mat-slide-toggle name="isOpenNewPage" (change)="onOpenNewPage($event)">Consult ticket</mat-slide-toggle>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="consultTicket()">
+      Go to ticket
+    </button>
+  </mat-card-actions>
+</mat-card>

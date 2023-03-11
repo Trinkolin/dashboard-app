@@ -1,0 +1,21 @@
+<mat-card [formGroup]="prxtimeForm">
+  <mat-card-header>
+    <mat-card-title>Calculate lunch break time</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="flex flex-col space-y-4">
+      <mat-form-field appearance="fill">
+        <mat-label>Out AM</mat-label>
+        <input matInput type="text" formControlName="startLunchTime" required>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>In PM</mat-label>
+        <input matInput type="text" formControlName="endLunchTime" required>
+      </mat-form-field>
+      <app-display-break-length [lunchTime]="lunchTime" [showCalculation]="showCalculation"></app-display-break-length>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="calculateLunchTime()">Calculate lunch time</button>
+  </mat-card-actions>
+</mat-card>

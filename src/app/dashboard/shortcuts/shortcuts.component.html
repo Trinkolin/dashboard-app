@@ -1,0 +1,5 @@
+<div class="grid grid-cols-3 gap-4  p-12">
+  <div *ngFor="let s of shortcuts;">
+    <app-consult-shortcut [section]="s.section" [shortcuts]="s.shortcuts"></app-consult-shortcut>
+  </div>
+</div>
