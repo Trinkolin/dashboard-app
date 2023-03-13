@@ -12,7 +12,7 @@ export class ForecastMssalComponent extends PrxtimeComponent {
 
   private readonly mssal = 'mssal'
   private readonly offset = 'offset'
-  isForecast: boolean
+  isForecast: boolean = false
   forecastTime!: Time
 
   constructor(private formBuilder: FormBuilder, dataService: DataService) {
@@ -21,7 +21,6 @@ export class ForecastMssalComponent extends PrxtimeComponent {
       mssal: this.createFormControlWithValueFromStorage(this.mssal),
       offset: this.createFormControlWithValueFromStorage('', false),
     })
-    this.isForecast = false
   }
 
   forecast(): void {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { FormBuilder } from '@angular/forms'
 import { DataService } from 'src/app/data.service'
 import { PrxtimeComponent } from '../prxtime.component'
@@ -7,7 +7,7 @@ import { PrxtimeComponent } from '../prxtime.component'
   selector: 'app-lunch-break',
   templateUrl: './lunch-break.component.html',
 })
-export class LunchBreakComponent extends PrxtimeComponent {
+export class LunchBreakComponent extends PrxtimeComponent implements OnInit {
 
   private readonly startLunchTime = 'startLunchTime'
   private readonly endLunchTime = 'endLunchTime'
@@ -15,7 +15,9 @@ export class LunchBreakComponent extends PrxtimeComponent {
 
   constructor(private formBuilder: FormBuilder, dataService: DataService) {
     super(dataService)
+  }
 
+  ngOnInit(): void {
     this.prxtimeForm = this.formBuilder.group({
       startLunchTime: this.createFormControlWithValueFromStorage(this.startLunchTime),
       endLunchTime: this.createFormControlWithValueFromStorage(this.endLunchTime)

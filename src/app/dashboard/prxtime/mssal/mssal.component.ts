@@ -15,7 +15,7 @@ export class MssalComponent extends PrxtimeComponent implements OnInit {
   private readonly offset = 'offset'
 
   newMSSAL!: Time
-  toRemove: boolean
+  toRemove: boolean = false
 
   constructor(private formBuilder: FormBuilder, dataService: DataService, private communicationService: CommunicationService) {
     super(dataService)
@@ -23,7 +23,6 @@ export class MssalComponent extends PrxtimeComponent implements OnInit {
       mssal: this.createFormControlWithValueFromStorage(this.mssal),
       offset: this.createFormControlWithValueFromStorage('', false),
     })
-    this.toRemove = false
   }
 
   ngOnInit() {

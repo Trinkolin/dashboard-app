@@ -17,7 +17,7 @@ export class WorkedTimeComponent extends PrxtimeComponent {
   public readonly outPM = 'outPM'
   public readonly mssal = 'mssal'
 
-  addToMssal: boolean
+  addToMssal: boolean = false
   workedTime!: Time
   lunchTime!: number
 
@@ -30,7 +30,6 @@ export class WorkedTimeComponent extends PrxtimeComponent {
       inPM: this.createFormControlWithValueFromStorage(this.inPM),
       outPM: this.createFormControlWithValueFromStorage(this.outPM),
     })
-    this.addToMssal = false
   }
 
   calculateTime(): void {

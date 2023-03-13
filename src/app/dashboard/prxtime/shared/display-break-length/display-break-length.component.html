@@ -1,9 +1,9 @@
 <div class="flex shadow-md" *ngIf="showCalculation">
-  <div class="flex w-1/4 rounded-l-sm items-center p-2 px-4"
+  <div class="flex items-center w-1/4 p-2 px-4 rounded-l-sm"
     [ngClass]="{'bg-green-300': lunchTime <= 42, 'bg-red-300': lunchTime > 42}">
     <span class="font-bold">Break length</span>
   </div>
-  <div class="flex w-3/4 rounded-r-sm items-center p-2 px-4"
+  <div class="flex items-center w-3/4 p-2 px-4 rounded-r-sm"
     [ngClass]="{'bg-green-200': lunchTime <= 42, 'bg-red-200': lunchTime > 42}">
     {{lunchTime}} {{lunchTime > 42 ? '(Break extended by ' + (lunchTime - 42) + ' minutes)' : ''}}
   </div>

@@ -15,10 +15,12 @@ export class TicketListComponent extends BitbucketComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, dataService: DataService, private communicationService: CommunicationService) {
     super(dataService)
-    this.selectedTicketsData = this.retrieveFromLocalStorageTicketsInProgress.slice()
+
   }
 
   ngOnInit() {
+    this.selectedTicketsData = this.retrieveFromLocalStorageTicketsInProgress.slice()
+    
     this.communicationService.action$.subscribe((ticket) => {
       this.selectedTicketsData.push(ticket as Ticket)
     })

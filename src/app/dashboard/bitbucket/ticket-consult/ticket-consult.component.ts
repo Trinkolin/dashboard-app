@@ -11,8 +11,8 @@ import { Ticket } from "../ticket";
 })
 export class TicketConsultComponent extends BitbucketComponent {
 
-  isToAddToTickets: boolean
-  isOpenNewPage: boolean
+  isToAddToTickets: boolean = false
+  isOpenNewPage: boolean = false
 
   constructor(private formBuilder: FormBuilder, private communicationService: CommunicationService, dataService: DataService,) {
     super(dataService);
@@ -20,9 +20,6 @@ export class TicketConsultComponent extends BitbucketComponent {
     this.bitbucket = this.formBuilder.group({
       ticket: new FormControl('', [Validators.required, Validators.minLength(4)]),
     })
-
-    this.isToAddToTickets = false
-    this.isOpenNewPage = false
   }
 
   consultTicket(): void {

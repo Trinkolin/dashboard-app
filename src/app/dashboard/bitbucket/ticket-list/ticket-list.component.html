@@ -4,7 +4,7 @@
   </mat-card-header>
   <mat-card-content>
     <ul>
-      <li *ngFor="let ticket of selectedTicketsData" class="flex items-center space-x-4 h-12">
+      <li *ngFor="let ticket of selectedTicketsData" class="flex items-center h-12 space-x-4">
         <input type="checkbox" [(ngModel)]="ticket.selected">
         <span>{{ticket.number}}</span>
         <a href="{{createALinkToTicket(ticket.number)}}" target="_blank">
